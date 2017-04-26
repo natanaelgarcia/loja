@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:body>
+	<ui:composition template="templates/default_layout.xhtml">
+		<ui:define name="content">
+			<div class="container">
+				<h:form>
+					<h:dataTable value="#{viewProdutos.listagem}" var="produto"
+						border="1">
+						<f:facet name="header">
+							<h:commandLink value="Cadastrar Novo Produto"
+								action="#{viewProdutos.actionInserir}" />
+						</f:facet>
+						<h:column>
+							<f:facet name="header">
+								<h:outputLabel value="ID" />
+							</f:facet>
+							<h:outputLabel value="#{produto.id}" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">
+								<h:outputLabel value="Nome" />
+							</f:facet>
+							<h:outputLabel value="#{produto.nome}" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">
+								<h:outputLabel value="Preço" />
+							</f:facet>
+							<h:outputLabel value="#{produto.preco}" />
+						</h:column>
+						<h:column>
+							<h:commandLink action="#{viewProdutos.actionExcluir(produto)}">
+								<h:outputLabel value="Excluir" />
+								<f:setPropertyActionListener value="#{produto}"
+									target="#{viewProdutos.produto}" />
+							</h:commandLink>
+						</h:column>
+						<h:column>
+							<h:commandLink action="form_produto">
+								<h:outputLabel value="Editar" />
+								<f:setPropertyActionListener value="#{produto}"
+									target="#{viewProdutos.produto}" />
+							</h:commandLink>
+						</h:column>
+					</h:dataTable>
+				</h:form>
+			</div>
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>

@@ -1,0 +1,137 @@
+@import
+	url('https://fonts.googleapis.com/css?family=Lobster|Roboto:300,400');
+
+/* default */
+body {
+	background: #f1f1f1;
+	font-family: 'Roboto', sans-serif;
+}
+
+.form-control {
+	border-radius: 0;
+}
+
+.btn-success {
+	color: #fff;
+	background-color: #01bf86;
+	border-color: #01bf86;
+}
+
+.btn-success:hover {
+	background-color: #03a977;
+	border-color: #01bf86;
+}
+
+.btn {
+	border-radius: 0;
+}
+
+.mb0 {
+	margin-bottom: 0;
+}
+
+.table.table-hover label {
+	font-weight: inherit;
+}
+/* fim default */
+
+/* página de login */
+.login {
+	background: #fff;
+	margin: 10% auto;
+	max-width: 320px;
+	min-height: 283px;
+	box-shadow: 0px 2px 16px 1px #d8d8d8;
+}
+
+.login .top {
+	background: #01bf86;
+	color: #f5fffc;
+	padding: 7px;
+	text-align: center;
+}
+
+.login .top h1 {
+	margin: 11px 0 9px;
+}
+
+.login .content {
+	padding: 15px;
+}
+
+.login .form-control {
+	border: none;
+	border-bottom: 1px solid #01bf86;
+	color: #666;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+.login .form-control:focus {
+	border-bottom-color: #f3c00e;
+}
+
+.login .form-group input[type="submit"] {
+	width: 100%;
+	margin-top: 18px;
+}
+
+/* fim página de login */
+
+/* topo do site */
+.navbar-default .navbar-brand {
+	color: #fff;
+}
+
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:hover,
+	.navbar-default .navbar-nav>.open>a:focus {
+	color: #fff;
+	background-color: #bf011b;
+}
+
+.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus
+	{
+	color: #fff;
+}
+
+.navbar-default {
+	background-color: #bf011b;
+	border-color: transparent;
+	border-radius: 0;
+	color: #fff;
+}
+
+.navbar-default .navbar-nav>li>a {
+	color: #fff;
+}
+
+.navbar-brand {
+	font-family: 'Lobster', cursive;
+	font-size: 32px;
+}
+
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus
+	{
+	color: #f1f0f0;
+}
+
+.pagetop {
+	display: block;
+	width: 100%;
+	height: 42px;
+	clear: both;
+	border-bottom: 1px solid #615959;
+	margin-bottom: 34px;
+}
+
+.pagetop h1 {
+	margin-top: 0;
+	font-size: 28px;
+}
+/* fim topo do site */
+.tab-content {
+	background: #fff;
+	border: 1px solid #dedede;
+	padding: 20px 20px;
+	border-top: none;
+}

@@ -1,0 +1,5 @@
+CREATE TABLE produto (
+	pro_id serial NOT NULL PRIMARY KEY,
+    pro_nome VARCHAR(60),
+    pro_preco float
+);
