@@ -7,22 +7,18 @@
 	xmlns:f="http://xmlns.jcp.org/jsf/core">
 
 <h:body>
-	<ui:composition template="templates/default_layout.xhtml">
+	<ui:composition template="../templates/default_layout.xhtml">
 		<ui:define name="content">
 			<div class="container">
 				<h:form>
-					<h:inputHidden value="#{viewProdutos.produto.id}" />
-					<h:panelGrid columns="2">
+					<h:panelGrid>
 						<f:facet name="header">
-							<h:outputLabel value="Cadastro de Produtos" />
+							<h:outputLabel value="Menu" />
 						</f:facet>
-						<h:outputLabel value="Nome:" />
-						<h:inputText value="#{viewProdutos.produto.nome}" />
-						<h:outputLabel value="Preço:" />
-						<h:inputText value="#{viewProdutos.produto.preco}" />
+						<h:outputLink value="publico/form_cliente.xhtml">Cadastro de cliente</h:outputLink>
+						<h:outputLink value="cliente/principal.xhtml">Acessar área do cliente</h:outputLink>
+						<h:outputLink value="admin/principal.xhtml">Acessar área administrativa</h:outputLink>
 					</h:panelGrid>
-					<h:commandButton value="Gravar"
-						action="#{viewProdutos.actionGravar}" />
 				</h:form>
 			</div>
 		</ui:define>

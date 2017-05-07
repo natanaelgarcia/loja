@@ -19,7 +19,7 @@ import persistencia.FormaPgtoDAO;
 public class FormaPgtoCtrl implements Serializable{
 
 	private static final long serialVersionUID = 1L;
-	private FormaPgto formaPgto = new FormaPgto();
+	private FormaPgto formaPgto = new FormaPgto(); 
 	private String filtro = "";
 	
 	public FormaPgto getFormaPgto() {
@@ -35,8 +35,8 @@ public class FormaPgtoCtrl implements Serializable{
 		this.filtro = filtro;
 	}
 	
-	public List<FormaPgto> getListagem() {
-		return FormaPgtoDAO.listagem(filtro);
+	public List<FormaPgto> getListagem() { 
+		return FormaPgtoDAO.listagem(""); 
 	}
 	
 	public String actionGravar(){
@@ -67,4 +67,11 @@ public class FormaPgtoCtrl implements Serializable{
 				String.valueOf(((FormaPgto) event.getObject()).getId()));
 		FacesContext.getCurrentInstance().addMessage(null, msg);
 	}
+	
+	public void handleClose(CloseEvent event) {   
+        FacesContext facesContext = FacesContext.getCurrentInstance();   
+        FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO,    
+            event.getComponent().getId() + " closed", "So you don't like nature?");   
+        facesContext.addMessage(null, message);   
+    }  
 }

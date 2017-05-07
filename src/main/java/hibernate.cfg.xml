@@ -5,11 +5,9 @@
 
 <hibernate-configuration>
 	<session-factory>
+		<!-- configuração da conexão com o banco de dados PostgreSQL e dialeto -->
 		<property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
-		<property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
-		<property name="hibernate.connection.username">postgres</property>
-		<property name="hibernate.connection.password">12345</property>
-		<property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/BDLojaVirtual</property>
+		<property name="connection.datasource">java:/comp/env/jdbc/BDLojaVirtual</property>
 		<property name="c3po.min.size">5</property>
 		<property name="c3po.max.size">20</property>
 		<property name="c3po.timeout">300</property>

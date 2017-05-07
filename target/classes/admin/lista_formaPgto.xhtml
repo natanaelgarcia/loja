@@ -29,7 +29,7 @@
 			</h:commandLink>
 		</div>
 		<p:separator />
-		<p:dataTable id="tbl" var="f" value="#{formaPagamentoCtrl.listagem}"
+		<p:dataTable id="tbl" var="f" value="#{formaPgtoCtrl.listagem}"
 			paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink}
 		{PageLinks} {NextPageLink} {LastPageLink}"
 			paginator="true" rows="10" style="margin-bottom:20px">
@@ -37,7 +37,7 @@
 			<f:facet name="header">
 				<h:outputLabel value="Lista de Formas de Pagamento" />
 				<p:commandButton value="Inserir" icon="icon-novo"
-					actionListener="#{formaPagamentoCtrl.actionInserir}"
+					actionListener="#{formaPgtoCtrl.actionInserir}"
 					oncomplete="PF('cadDialog').show()" update=":form:cadDetail">
 				</p:commandButton>
 			</f:facet>
@@ -57,25 +57,25 @@
 			<p:column style="width:32px;text-align: center">
 				<p:commandButton update=":form:cadDetail" oncomplete="PF('cadDialog').show()"
 				icon="ui-icon-search" title="View">
-				<f:setPropertyActionListener value="#{f}" target="#{formaPagamentoCtrl.formaPagamento}"></f:setPropertyActionListener>
+				<f:setPropertyActionListener value="#{f}" target="#{formaPgtoCtrl.formaPgto}"></f:setPropertyActionListener>
 				</p:commandButton>			
 			</p:column>
 		</p:dataTable>
 		<p:dialog header="Cadastro de Forma de Pagamento" widgetVar="cadDialog" modal="true" showEffect="fade" 
-		hideEffect="fade" resizable="false" closeListener="#{formaPagamentoCtrl.handleClose}">
+		hideEffect="fade" resizable="false" closeListener="#{formaPgtoCtrl.handleClose}">
 			<p:outputPanel id="cadDetail" style="text=align:center;">
 				<h:panelGrid columns="2" cellpadding="10">
 					<h:outputLabel value="Código"/>
-					<h:inputText value="#{formaPagamentoCtrl.formaPagamento.id}" size="6" maxlength="10" readonly="true"/>
+					<h:inputText value="#{formaPgtoCtrl.formaPgto.id}" size="6" maxlength="10" readonly="true"/>
 					<h:outputLabel value="Nome"/>
-					<h:inputText value="#{formaPagamentoCtrl.formaPagamento.descricao}" size="30" maxlength="20"/>
+					<h:inputText value="#{formaPgtoCtrl.formaPgto.descricao}" size="30" maxlength="20"/>
 					<h:outputLabel value="Nº Máx.Parcelas"/>
-					<h:inputText value="#{formaPagamentoCtrl.formaPagamento.numMaxParc}" size="6" maxlength="3"/>
+					<h:inputText value="#{formaPgtoCtrl.formaPgto.numMaxParc}" size="6" maxlength="3"/>
 					<h:outputLabel value="Intervalo (dias)"/>
-					<h:inputText value="#{formaPagamentoCtrl.formaPagamento.intervaloDias}" size="6" maxlength="3"/>
+					<h:inputText value="#{formaPgtoCtrl.formaPgto.intervaloDias}" size="6" maxlength="3"/>
 				</h:panelGrid>
-				<h:commandButton value="Excluir" action="#{formaPagamentoCtrl.actionExcluir}" update="growl"/>
-				<h:commandButton value="Gravar" action="#{formaPagamentoCtrl.actionGravar}" update="growl"/>
+				<h:commandButton value="Excluir" action="#{formaPgtoCtrl.actionExcluir}" update="growl"/>
+				<h:commandButton value="Gravar" action="#{formaPgtoCtrl.actionGravar}" update="growl"/>
 				<h:commandButton value="Cancelar" oncomplete="cadDialog.hide()"/>
 		</p:outputPanel>
 		</p:dialog>

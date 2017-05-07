@@ -1,6 +1,11 @@
 package beans;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
 @Table(name = "forma_pgto")
@@ -10,50 +15,67 @@ public class FormaPgto {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "fpg_id")
 	private int id;
+	
 	@Column(name = "fpg_descricao", length = 20, nullable = true)
 	private String descricao;
+	
 	@Column(name = "fpg_num_max_parc", nullable = true)
-	private String numMaxParc;
+	private int numMaxParc;
+	
 	@Column(name = "fpg_num_padrao_parc", nullable = true)
-	private String numPadraoParc;
+	private int numPadraoParc;
+	
 	@Column(name = "fpg_intervalo_dias", nullable = true)
-	private String intervaloDias;
+	private int intervaloDias;
+	
 	@Column(name = "fpg_percentual_acres", nullable = true)
-	private String percentualAcres;
+	private float percentualAcres;
+
 	public int getId() {
 		return id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
+
 	public String getDescricao() {
 		return descricao;
 	}
+
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-	public String getNumMaxParc() {
+
+	public int getNumMaxParc() {
 		return numMaxParc;
 	}
-	public void setNumMaxParc(String numMaxParc) {
+
+	public void setNumMaxParc(int numMaxParc) {
 		this.numMaxParc = numMaxParc;
 	}
-	public String getNumPadraoParc() {
+
+	public int getNumPadraoParc() {
 		return numPadraoParc;
 	}
-	public void setNumPadraoParc(String numPadraoParc) {
+
+	public void setNumPadraoParc(int numPadraoParc) {
 		this.numPadraoParc = numPadraoParc;
 	}
-	public String getIntervaloDias() {
+
+	public int getIntervaloDias() {
 		return intervaloDias;
 	}
-	public void setIntervaloDias(String intervaloDias) {
+
+	public void setIntervaloDias(int intervaloDias) {
 		this.intervaloDias = intervaloDias;
 	}
-	public String getPercentualAcres() {
+
+	public float getPercentualAcres() {
 		return percentualAcres;
 	}
-	public void setPercentualAcres(String percentualAcres) {
+
+	public void setPercentualAcres(float percentualAcres) {
 		this.percentualAcres = percentualAcres;
 	}
 }

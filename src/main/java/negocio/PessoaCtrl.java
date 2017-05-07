@@ -32,34 +32,34 @@ public class PessoaCtrl implements Serializable {
 			return actionInserir();
 		} else {
 			PessoaDAO.alterar(pessoa);
-			return "lista_pessoa";
+			return "admin/lista_cliente";
 		}
 	}
 
 	public String actionInserir() {
 		pessoa = new Pessoa();
-		return "form_pessoa";
+		return "publico/form_pessoa";
 	}
 
 	public String actionExcluir(Pessoa p) {
 		PessoaDAO.excluir(p);
-		return "lista_pessoa";
+		return "admin/lista_cliente";
 	}
 
 	public String actionAlterar(Pessoa p) {
 		pessoa = p;
-		return "form_pessoa";
+		return "publico/form_pessoa";
 	}
 	
 	public String actionInserirFone() {
 		Fone fone = new Fone();
 		fone.setPessoa(pessoa);
 		pessoa.getFones().add(fone);
-		return "form_pessoa";
+		return "publico/form_cliente";
 	}
 	
 	public String actionListaPessoa(Pessoa p) {
 		pessoa = p;
-		return "lista_pessoas";
+		return "admin/lista_cliente";
 	}
 }
