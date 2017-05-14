@@ -13,22 +13,22 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "cidade")
+@Table(name = "end_cidade")
 public class Cidade {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id")
+	@Column(name = "cid_id")
 	private int id;
 
-	@Column(name = "nome")
+	@Column(name = "cid_nome")
 	private String nome;
 
 	@ManyToOne
-	@JoinColumn(name = "estado")
+	@JoinColumn(name = "est_id")
 	private Estado estado;
 
-	@OneToMany(mappedBy = "cidade")
+	@OneToMany(mappedBy = "cid_id")
 	private List<Pessoa> clientes;
 
 	public int getId() {

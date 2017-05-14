@@ -17,24 +17,24 @@ public class Estado {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id")
+	@Column(name = "est_id")
 	private int id;
 
-	@Column(name = "nome")
+	@Column(name = "est_nome")
 	private String nome;
 
-	@Column(name = "sigla")
+	@Column(name = "est_sigla")
 	private String sigla;
 
-	@OneToMany(mappedBy = "estado", fetch = FetchType.EAGER)
-	private List<Cidade> cidadesMunicipais;
+	@OneToMany(mappedBy = "est_id", fetch = FetchType.EAGER)
+	private List<Cidade> cidadesLista;
 
-	public List<Cidade> getCidadesMunicipais() {
-		return cidadesMunicipais;
+	public List<Cidade> getCidadesLista() {
+		return cidadesLista;
 	}
 
-	public void setCidadesMunicipais(List<Cidade> cidadesMunicipais) {
-		this.cidadesMunicipais = cidadesMunicipais;
+	public void setCidadesLista(List<Cidade> cidadesLista) {
+		this.cidadesLista = cidadesLista;
 	}
 
 	public int getId() {
